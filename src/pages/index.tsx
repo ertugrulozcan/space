@@ -40,11 +40,40 @@ export default function Home() {
 				// universe.addBody(new Body(3, "white"), random(canvasSize.width), random(canvasSize.height))
 			}
 
-			universe.addBody(new Body(3000, "yellow"), 1240, 650)
+			const sun = new Body(3000, "yellow")
+			universe.addBody(sun, 1240, 650)
 			
-			const planet = new Body(3, "white")
-			planet.velocity = new Vector2(0.0, -10.0);
-			universe.addBody(planet, 300, 650)
+			const mercury = new Body(3, "white")
+			mercury.velocity = new Vector2(0.0, -20.0);
+			universe.addBody(mercury, 1000, 650)
+
+			const venus = new Body(3, "white")
+			venus.velocity = new Vector2(0.0, -20.0);
+			universe.addBody(venus, 900, 650)
+
+			const earth = new Body(3, "white")
+			earth.velocity = new Vector2(0.0, 20.0);
+			universe.addBody(earth, 800, 650)
+
+			const mars = new Body(3, "white")
+			mars.velocity = new Vector2(0.0, -18.0);
+			universe.addBody(mars, 700, 650)
+
+			const jupiter = new Body(3, "white")
+			jupiter.velocity = new Vector2(0.0, -17.0);
+			universe.addBody(jupiter, 600, 650)
+
+			const saturn = new Body(3, "white")
+			saturn.velocity = new Vector2(0.0, -16.0);
+			universe.addBody(saturn, 500, 650)
+
+			const uranus = new Body(3, "white")
+			uranus.velocity = new Vector2(0.0, -15.0);
+			universe.addBody(uranus, 400, 650)
+
+			const neptun = new Body(3, "white")
+			neptun.velocity = new Vector2(0.0, -14.0);
+			universe.addBody(neptun, 300, 650)
 			
 			simulation(canvas)
 		}
@@ -69,7 +98,7 @@ export default function Home() {
 	function simulation(context: CanvasRenderingContext2D) {
 		clear(context, canvasSize)
 	
-		universe.update(0.5);		
+		universe.update(0.1);		
 		universe.draw(context, true);
 
 		requestAnimationFrame(() => { simulation(context) });
