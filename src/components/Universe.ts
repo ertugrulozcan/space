@@ -7,7 +7,7 @@ function gravity(G: number, m1: number, m2: number, dist: number) {
 
 export default class Universe {
 	bodies: Body[] = [];
-	G: number = 10.0;
+	G: number = 100.0;
 	
 	addBody(b: Body, x: number, y: number) {
 		b.position.set(x, y);
